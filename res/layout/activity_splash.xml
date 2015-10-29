@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_zero_margin"
+    android:paddingLeft="@dimen/activity_zero_margin"
+    android:paddingRight="@dimen/activity_zero_margin"
+    android:paddingTop="@dimen/activity_zero_margin"
+    tools:context=".SplashActivity"
+    android:background="@color/theme_color" >
+
+	<TextView
+	    android:id="@+id/logo_text"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="98dp"
+	    android:text="Found,让失物招领更简单!"
+	    android:textColor="#FFFFFF"
+	    android:textSize="16sp" />
+
+	<TextView
+	    android:id="@+id/logo_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/logo_text"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="180dp"
+	    android:drawablePadding="8dp"
+	    android:drawableTop="@drawable/ic_launcher"
+	    android:text="F o u n d"
+	    android:textColor="#FFFFFF"
+	    android:textSize="36sp" />
+
+</RelativeLayout>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jason.found"
+    android:versionCode="4"
+    android:versionName="1.1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <!-- bmob permission -->
+  	<uses-permission android:name="android.permission.INTERNET" /><!-- 允许应用打开网络套接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- 允许应用访问网络上的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+   	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+   	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+   	<uses-permission android:name="android.permission.READ_LOGS" />
+   	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+   	<uses-permission android:name="android.permission.VIBRATE"/>
+   	<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+   	<uses-permission android:name="android.permission.GET_TASKS"/>
+   	<uses-permission android:name="android.permission.REORDER_TASKS"/>
+   	
+   	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+   	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+   	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+   	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+   	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+   	
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name="com.jason.found.MyApplication">
+        <activity
+         	android:name="com.jason.found.ui.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.jason.found.ui.MainActivity"
+            	  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.RegisterAndLoginActivity"
+            	  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.EditLostActivity"
+            	  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"
+            	  android:windowSoftInputMode="adjustPan"
+            	  ></activity>
+        <activity android:name="com.jason.found.ui.EditFoundActivity"
+            	  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"
+            	  android:windowSoftInputMode="adjustPan"
+            	  ></activity>
+        <activity android:name="com.jason.found.ui.LostCommentActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.FoundCommentActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.FavActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.PersonalActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.PersonalEditActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.jason.found.ui.SettingsActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+         <activity android:name="com.jason.found.ui.AboutActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+          <activity android:name="com.jason.found.ui.EditSignActivity"
+                  android:screenOrientation="portrait"
+            	  android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+          
+    	 <!-- umeng feedback -->
+         
+         <activity android:name="com.umeng.fb.ContactActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"/>
+         <activity android:name="com.umeng.fb.ConversationActivity" android:label="@string/umeng_fb_title" android:launchMode="singleTop" /> 
+  <activity android:name="com.umeng.fb.HelpActivity" android:label="@string/umeng_fb_title" android:launchMode="singleTop" /> 
+         
+         <!-- umeng APPKEY配置 -->
+         <meta-data android:value="55c9709067e58e78d20013af" android:name="UMENG_APPKEY"></meta-data>
+         <meta-data android:value="QD_umeng" android:name="UMENG_CHANNEL"/>
+         
+         <meta-data android:name="UMENG_MESSAGE_SECRET" android:value="f7dfc3352b5f854f736037c4b74f1572"/>
+          <!-- umeng APPKEY配置 -->
+    	 <!-- umeng update -->
+    	 <service
+			       android:name="com.umeng.update.net.DownloadingService"
+			       android:process=":DownloadingService" >
+		 </service>
+		 <activity 
+		    	   android:name="com.umeng.update.UpdateDialogActivity"
+		           android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+		 </activity>
+		 <!-- umeng update -->
+<!-- umeng推送配置开始 -->
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" >
+        </receiver>
+        <receiver
+            android:name="com.umeng.message.SystemReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.umeng.message.MessageReceiver"
+	    android:exported="false"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.umeng.message.ElectionReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4" />
+                <category android:name="umeng" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.umeng.message.RegistrationReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.jason.found.intent.action.COMMAND" />
+            </intent-filter>
+        </receiver>
+		<receiver android:name="com.umeng.message.UmengMessageBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.umeng.message.UmengService"
+			android:label="PushService"
+            android:exported="true"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="com.jason.found.intent.action.START" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jason.found.intent.action.COCKROACH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4" />
+				<category android:name="umeng" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.umeng.message.UmengIntentService" 
+			android:process=":push" />
+			
+		<service 
+			android:name="com.umeng.message.UmengMessageIntentReceiverService"
+			android:process=":push" 
+			android:exported="true" >
+			<intent-filter>
+				<action android:name="org.android.agoo.client.MessageReceiverService" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="org.android.agoo.client.ElectionReceiverService" />
+			</intent-filter>
+		</service>
+		
+		<service android:name="com.umeng.message.UmengMessageCallbackHandlerService" 
+		    android:exported="false">
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.unregistercallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.autoupdate.handler.action"/>
+            </intent-filter>
+        </service>      
+<!-- umeng推送配置结束 -->
+		 
+		   
+			
+			        <!-- openqq -->
+         <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent100548485" />
+ 				<!-- 100380359 100381104 222222 -->
+            </intent-filter>
+        </activity>
+         <!-- MAT -->
+        <!-- 请将value改为MTA分配的appkey < -->
+        <meta-data
+            android:name="TA_APPKEY"
+            android:value="Aqc100548485" />
+        <!-- 请将value改为app发布对应的渠道，不同的发布渠道使用不同的名字 < -->
+        <meta-data
+            android:name="InstallChannel"
+            android:value="QD_91" />
+        <!-- 注意：若填写的渠道为纯数字字符串类型，请不要超过int表示的范围！ < -->
+    </application>
+
+</manifest>

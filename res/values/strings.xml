@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Found</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="actionbar_activity_not_found">Failed to open intent&#8230;</string>
+    <string name="application_title">Found</string>
+    
+    <string name="settings_title">应用设置</string>
+    
+    <string name="about_title">关于</string>
+    
+    <string name="action_feedback">Feedback</string>
+    <string name="action_new_conversation">新建会话</string>
+    <string name="feedback_title">用户反馈</string>
+    <string name="fb_fragment_activity">使用 SDK Fragment</string>
+    <string name="sdk_fb_activity">使用 SDK Activity</string>
+    <string name="multi_conversation_activity">多会话模式</string>
+    <string name="title_item_list">反馈列表</string>
+    <string name="fb_help_activity">帮助页面</string>
+    
+    <string-array name="navigations">
+        <item>设置</item>
+        <item>反馈</item>
+        <item>推荐</item>
+        <item>关于</item>
+    </string-array>
+       <string-array name="interpolators">
+        <item>Accelerate</item>
+        <item>Linear</item>
+        <item>AccelerateDecelerate</item>
+        <item>Decelerate</item>
+    </string-array>
+    
+   
+    <string name="dialog_tips">大家好\n\t\t\t\t因招领页面出现影响用户操作的重大bug，招领页面部分功能已停用，但不影响信息的发布及查询，我们的攻城狮也正在紧急修复中，敬请谅解！</string>
+</resources>
