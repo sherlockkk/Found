@@ -28,6 +28,8 @@ import com.umeng.fb.push.FeedbackPush;
 
 public class MyApplication extends Application {
 
+	public static String URL = "";
+
 	public static String TAG;
 
 	private static MyApplication myApplication = null;
